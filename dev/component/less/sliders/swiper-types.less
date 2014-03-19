@@ -1,0 +1,285 @@
+@dot-size: 10px;
+@radius: @dot-size;
+.swiper-container{
+  .user-select(none);
+}
+.swiper-pagination-switch {
+  cursor: pointer;
+}
+
+.swiper-container .wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.swiper-pagination-switch {
+  display: inline-block;
+  width: @dot-size;
+  height: @dot-size;
+  margin: @dot-size/2;
+  background-color: #fff;
+  .opacity(0.4);
+  border-radius: @radius;
+}
+
+.swiper-visible-switch {
+  .opacity(0.9);
+}
+
+.swiper-active-switch {
+  .opacity(1);
+}
+
+///////////FULL WITH SWIPER
+.swiper-full-width {
+/* ===============================================================
+SIZES
+================================================================*/
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    .wrapper {
+    }
+    .title, .desc, .more {
+      margin-bottom: 20px;
+    }
+  }
+
+  .swiper-slide-active {
+
+  }
+  .swiper-slide-visible {
+  }
+
+/* ===============================================================
+Pagination Styles
+================================================================*/
+  .swiper-pagination {
+    position: absolute;
+    bottom: @dot-size*1.5;
+    left: 0;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .swiper-active-switch {
+  /* Specific active button style: */
+
+  }
+  .swiper-visible-switch {
+  /* Specific visible button style: */
+
+  }
+
+  .ui-arrow {
+    display: none;
+  }
+
+  &:hover {
+    .ui-arrow {
+      display: block;
+    }
+  }
+
+}
+
+///////////FULL WITH SWIPER
+.swiper-scroller {
+/* ===============================================================
+SIZES
+================================================================*/
+  .swiper-container {
+    width: 100%;
+  }
+  .swiper-slide {
+    width: 460px;
+    min-height: 270px;
+    height: 100%;
+  }
+  .swiper-slide-active {
+
+  }
+  .swiper-slide-visible {
+  }
+
+/* ===============================================================
+Pagination Styles
+================================================================*/
+  .swiper-pagination {
+    position: absolute;
+    bottom: @dot-size*1.5;
+    left: 0;
+    width: 100%;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    text-align: center;
+    z-index: 3;
+  }
+  .swiper-pagination-switch {
+  /* Stylize pagination button: */
+  }
+  .swiper-active-switch {
+  /* Specific active button style: */
+
+  }
+  .swiper-visible-switch {
+  /* Specific visible button style: */
+
+  }
+
+  .ui-arrow {
+    display: none;
+  }
+
+  &:hover {
+//    .ui-arrow {
+//      display: block;
+//    }
+    .swiper-pagination {display: block;}
+  }
+
+
+}
+
+
+///////////DIVS
+.swiper-scroller-blocks {
+/* ===============================================================
+SIZES
+================================================================*/
+  .swiper-container {
+    width: 100%;
+  }
+  .swiper-slide {
+    min-height: 230px;
+    height: 100%;
+    .m{
+      width:320px;
+      padding-right:40px;
+      .m-object{
+        width:80px;
+        height:80px;
+        display: block;
+
+        position:relative;
+        .num{
+          position:absolute;
+          left:0;
+          top:0;
+          overflow: hidden;
+//          border-radius: 35px;
+          width:70px;
+          height:70px;
+          display:block;
+          background-color: @gray-light;
+          color:#fff;
+          font-size: 70px;
+          line-height: 70px;
+          text-align: right;
+          font-weight: bold;
+        }
+      }
+      .m-body{
+        .m-heading {
+          font-size: 12px;
+          font-family: @f-main;
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 1;
+          margin-bottom: @gap-base;
+//          margin-top: @gap-small;
+        }
+        .m-desc {
+          font-size: 12px;
+          line-height: 1.5;
+          color: @gray-light
+        }
+      }
+    }
+  }
+  .swiper-slide-active {
+    .num{
+      background-color: #EBA202!important;
+//      transform: scale(1.4) scaleZ(1.0);
+//      transform-origin: 50% 50%;
+////      perspective: 1000;
+//      -webkit-transform: scale(1.4) scaleZ(1.0);
+//      -webkit-transform-origin: 50% 50%;
+//      -webkit-perspective: 1000;
+//      -webkit-perspective-origin: 50% 50%;
+//      -moz-transform: scale(1.4) scaleZ(1.0);
+//      -moz-transform-origin: 50% 50%;
+//      -moz-perspective: 1000;
+//      -moz-perspective-origin: 50% 50%;
+//      -o-transform: scale(1.4) scaleZ(1.0);
+//      -o-transform-origin: 50% 50%;
+//      -o-perspective: 1000;
+//      -o-perspective-origin: 50% 50%;
+//      -ms-transform: scale(1.4) scaleZ(1.0);
+//      -ms-transform-origin: 50% 50%;
+//      -ms-perspective: 1000;
+//      -ms-perspective-origin: 50% 50%;
+//      transform: scale(1.4) scaleZ(1.0);
+//      transform-origin: 50% 50%;
+//      perspective: 1000;
+//      perspective-origin: 50% 50%;
+      .transition(0.25s);
+    }
+  .m-heading{
+//    color:@c-main;
+  }
+  }
+  .swiper-slide-visible {
+  }
+
+/* ===============================================================
+Pagination Styles
+================================================================*/
+  .swiper-pagination {
+    position: absolute;
+    bottom: @dot-size*1.5;
+    left: 0;
+    width: 100%;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    text-align: left;
+    z-index: 3;
+  }
+  .swiper-pagination-switch {
+  background-color: @gray-lighter;
+  }
+  .swiper-active-switch {
+  /* Specific active button style: */
+
+  }
+  .swiper-visible-switch {
+  /* Specific visible button style: */
+
+  }
+
+  .ui-arrow {
+    display: none;
+  }
+
+  &:hover {
+//    .ui-arrow {
+//      display: block;
+//    }
+    .swiper-pagination {display: block;}
+  }
+
+
+}

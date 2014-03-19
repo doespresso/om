@@ -1,0 +1,1 @@
+a:1:{i:0;a:7:{i:0;s:2:"ru";i:1;s:0:"";i:2;s:42:"<ul class="breadcrumbs" role="navigation">";i:3;s:72:"<li><a href="{URL}" title="Вернуться к {TEXT}">{TEXT}</a></li>";i:4;s:28:"<li><span>{TEXT}</span></li>";i:5;s:5:"</ul>";i:6;s:86:"a:2:{s:8:"user_f_2";s:28:"<img src="{VALUE}" alt="" />";s:8:"user_f_3";s:7:"{VALUE}";}";}}

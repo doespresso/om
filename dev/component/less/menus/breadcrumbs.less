@@ -1,0 +1,50 @@
+.breadcrumbs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display:block;
+  width:100%;
+  min-height:@gap-base;
+  li {
+    display: block;
+    margin-bottom: @gap-small;
+    a {
+      position: relative;
+      display: block;
+      color: @c-main;
+      border-bottom: 1px @gray-lighter solid;
+      padding-bottom: @gap-small;
+      padding-left: @gap-base;
+      &:before {
+        content: "\e68e";
+        font-family: @icon-font-name;
+        font-size: 12px;
+        color: lighten(@gray-light, 20%);
+        padding-right: @gap-small;
+        position: absolute;
+        left: 0;
+        top: 0;
+        .transition(0.3s);
+      }
+      &:hover {
+        border-color: @c-main;
+        &:before {
+          color: @c-main;
+          left: @gap-small;
+        }
+      }
+    }
+    span {
+      color: @gray-lighter;
+      display: none;
+    }
+  }
+  @media (max-width:@screen-sm-max){
+    margin-top:@gap-base;
+    li{
+      position:relative; display:inline; float:left;
+      padding-left: @gap-base;
+      &:first-child{padding-left: 0;}
+    }
+  }
+}

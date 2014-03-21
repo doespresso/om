@@ -7,6 +7,21 @@
   cursor: pointer;
 }
 
+.swiper-slide, .slide-wrapper{
+  margin:0; padding:0;
+  border-width:0!important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.slide-wrapper{
+  height:100%;
+  width:100%;
+  display: block;
+  position: relative;
+}
+
 .swiper-container .wrapper {
   background-repeat: no-repeat;
   background-size: cover;
@@ -260,6 +275,108 @@ Pagination Styles
   }
   .swiper-pagination-switch {
   background-color: @gray-lighter;
+  }
+  .swiper-active-switch {
+  /* Specific active button style: */
+
+  }
+  .swiper-visible-switch {
+  /* Specific visible button style: */
+
+  }
+
+  .ui-arrow {
+    display: none;
+  }
+
+  &:hover {
+//    .ui-arrow {
+//      display: block;
+//    }
+    .swiper-pagination {display: block;}
+  }
+
+
+}
+
+
+///////////FULL WITH SWIPER
+.swiper-fotos {
+/* ===============================================================
+SIZES
+================================================================*/
+  .swiper-container {
+    width:100%;
+    height:280px;
+//    background-color: @gray-lighter;
+  }
+  .swiper-slide {
+    width: 100%;
+    height:280px;
+    .slide-wrapper{
+
+    }
+  }
+  .swiper-slide-active {
+
+  }
+  .swiper-slide-visible {
+  }
+
+  .swiper-slide {
+    .caption {
+      color:#fff;
+      position: absolute;
+      right: @gap-base;
+      bottom: @gap-base;
+      padding: @gap-small @gap-small;
+      background-color: rgba(0, 0, 0, 0.5);
+      font-size: 11px;
+    }
+    .zoom {
+      position: absolute;
+      right: @gap-base;
+      top: @gap-base;
+      display: table-cell;
+      border:3px #fff solid;
+      text-align: center;
+      vertical-align: middle;
+      color: #fff;
+      padding-bottom:4px;
+      width:44px;
+      height:44px;
+      text-align: center;
+      border-radius:100%;
+      .transition(0.3s);
+      &:hover{
+        color: @gray-light;
+        background-color: #fff;
+      }
+    }
+    .zoom:before {
+      content: "+";
+      font-size: 38px;
+      line-height: 30px;
+    }
+  }
+
+/* ===============================================================
+Pagination Styles
+================================================================*/
+  .swiper-pagination {
+    position: absolute;
+    bottom: @dot-size*1.5;
+    left: 0;
+    width: 100%;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    text-align: center;
+    z-index: 3;
+  }
+  .swiper-pagination-switch {
+  /* Stylize pagination button: */
   }
   .swiper-active-switch {
   /* Specific active button style: */

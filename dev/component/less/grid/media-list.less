@@ -87,7 +87,7 @@
     }
     .m-body{
       padding:@gap-base @gap-base;
-//      .transition(0.5s);
+      .transition(0.5s);
     }
     .m-heading{
       font-size: 12px;
@@ -95,7 +95,8 @@
       font-weight: bold;
       color:@gray-dark;
       @media (max-width: @screen-sm-max) {
-        font-size: 14px;
+        font-size: 18px;
+        font-weight: normal;
         line-height: 1.2;
       }
     }
@@ -124,7 +125,7 @@
   @media (max-width: @screen-tablet) {
     width:100%;
     margin-right:0;
-    margin-bottom: 1px;
+    margin-bottom: @gap-small;
   }
   }
 }
@@ -147,8 +148,8 @@
     display:block;
   }
   &:after{
-//    color:#fff;
-    color:lighten(@c-main,10%);
+    color:#fff;
+//    color:lighten(@c-main,10%);
   }
 }
 
@@ -167,20 +168,26 @@
     background-color: transparent;
     .m-object{
       display: block;
-      width:60px;
+      width:70px;
       height:90px;
       background: transparent;
+//      border:1px @gray-light solid;
+      margin-right:@gap-base;
       .pull-left;
+      background-image: url('/download/pic/doc-cranes.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
     }
-    .m-object:before{
-      content:"\e68b";
-      font-size: @icon-size;
-      line-height: @icon-size;
-      font-family: @icon-font-name;
-      color:@gray-lighter;
-      padding-left: 2px;
-      .transition(0.5s);
-    }
+//    .m-object:before{
+//      content:"\e68b";
+//      font-size: @icon-size;
+//      line-height: @icon-size;
+//      font-family: @icon-font-name;
+//      color:@gray-lighter;
+//      padding-left: 2px;
+//      .transition(0.5s);
+//    }
     .m-body{
 //      padding:@gap-base 0;
       color:@gray-light;
@@ -220,17 +227,18 @@
     }
   @media (max-width: @screen-tablet) {
     width:100%;
+    height:auto;
     margin-right:0;
     margin-bottom: 2px;
-    height:80px;
     margin-top: @gap-base;
+    padding-bottom: @gap-base;
     border-bottom: 1px solid @gray-lighter;
   }
   }
   .m:hover{
-    .m-object:before{
-//      color:@c-main;
-      color:@gray-light;
+    .m-object{
+      background-color:@gray-lighter;
+      border-color:@gray-lighter;
     }
     .m-heading{
 //      font-weight: bold;
@@ -240,12 +248,12 @@
 .file-pdf{
   position: absolute;
   left:0;
-  top:@icon-size/1.4;
+  bottom:20px;
   background-color: red;
   color:#fff;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 10px;
-  padding:2px 4px;
+  padding:3px 5px;
 }
 }
 
@@ -255,7 +263,7 @@
     display:block;
     position:relative;
     float:left;
-    width:130px;
+    width:124px;
     height:60px;
     margin-right:@gap-base;
     background-color: @gray-lighter;
@@ -291,37 +299,46 @@
       height: 20px;
       display:none;
     }
+
     &:after{
-      content:"\e61c";
-      color:@c-main;
+      content:"\e68e";
+//      content:"+";
+      color:#fff;
       font-family: @icon-font-name;
-      font-size: 18px;
-      padding:@gap-small;
+      font-size: 16px;
       position:absolute;
-      left:0;
-      top:0;
-      width:100%;
-      height:100%;
-      background-color: #fff;
-      .opacity(0);
+      left:-@gap-big;
+      top:@gap-small;
+      .transition(0.3s);
+    }
+
+    &.active {
+      .opacity(0.4);
+      .transition(0.5s);
+      &:hover {
+        &:after {
+          display: none;
+          .translate(0,0);
+        }
+      }
     }
 
 
-
   @media (max-width: @screen-phone) {
-      width:33.33%;
-      margin-right:0;
+      width:33%;
+      margin-right:1px;
+      margin-bottom:1px;
   }
 
   }
 }
 
 .foto-list .m:hover{
-  background-color: @gray-light;
+
 
   .m-object{
 //    display:none
-//    .translate(-100px,0);
+//    .translate(@gap-big,0);
   }
   .m-body{
 //    .translate(-100px,0);
@@ -334,7 +351,8 @@
 //    display:block;
   }
   &:after{
-    .opacity(0.9);
+    display:block;
+    .translate(@gap-big + @gap-small,0);
   }
 }
 
@@ -346,3 +364,4 @@
   .date{font-size: @font-size-small; margin:@gap-small 0; color:@gray-light;}
 
 }
+

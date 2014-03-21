@@ -24,14 +24,14 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-  margin-top: @line-height-computed;
-  margin-bottom: (@line-height-computed / 2);
-
+  margin-top: @line-height-computed*2;
+  margin-bottom: (@line-height-computed);
   small,
   .small {
     font-size: 65%;
   }
 }
+
 h4, .h4,
 h5, .h5,
 h6, .h6 {
@@ -57,16 +57,20 @@ h6, .h6 { font-size: @font-size-h6; }
 
 p {
   margin: 0 0 (@line-height-computed / 2);
+  line-height: 1.8;
 }
 
 .lead {
   margin-bottom: @line-height-computed;
-  font-size: floor((@font-size-base * 1.15));
-  font-weight: 200;
+  font-size: floor((@font-size-base * 1.6));
   line-height: 1.4;
 
   @media (min-width: @screen-sm-min) {
     font-size: (@font-size-base * 1.5);
+    line-height: 1.6;
+    max-width: 90%;
+    font-weight: 200;
+    margin-bottom: @gap-big;
   }
 }
 
@@ -76,7 +80,7 @@ p {
 
 // Ex: 14px base font * 85% = about 12px
 small,
-.small  { font-size: 85%; }
+.small  { font-size: 95%; }
 
 // Undo browser default styling
 cite    { font-style: normal; }

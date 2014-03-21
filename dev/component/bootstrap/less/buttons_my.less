@@ -7,13 +7,15 @@
   display: inline-block;
   margin-bottom: 0; // For input.btn
   font-weight: @btn-font-weight;
+//  font-family: @f-main;
+//  font-weight: bold;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
   white-space: nowrap;
-  .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @border-radius-base);
+  .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; 2px);
   .user-select(none);
 
   &,
@@ -51,16 +53,16 @@
 // Alternate buttons
 // --------------------------------------------------
 
-//.btn-wf {
-//  .button-variant(#fff; transparent; #fff);
-//  border:1px #fff solid;
-//  &:hover,
-//  &:focus {
-//    color:@gray;
-//    background-color: #fff;
-//    text-decoration: none;
-//  }
-//}
+.btn-wf {
+  .button-variant(#fff; transparent; #fff);
+  border:1px #fff solid;
+  &:hover,
+  &:focus {
+    color:@c-main;
+    background-color: #fff;
+    text-decoration: none;
+  }
+}
 
 //.btn-wu {
 //  .btn-block;
@@ -84,17 +86,29 @@
 //  .make-line-top(@w:0; @c:#fff);
 //}
 //
-//.btn-gf {
-//  .button-variant(@gray; transparent; @gray);
-//  border:1px @gray solid;
-//  &:hover,
-//  &:focus {
-//  //    color:@gray;
-//      background-color: @gray-lighter;
-//      border-color: @gray-lighter;
-//      text-decoration: none;
-//  }
-//}
+.btn-gf {
+  .button-variant(@gray; transparent; @gray-light);
+  border:2px @gray-light solid;
+  &:hover,
+  &:focus {
+      color:#fff;
+      background-color: @gray-light;
+      border-color: @gray-light;
+      text-decoration: none;
+  }
+}
+
+.btn-mf {
+  .button-variant(@c-main; transparent; @c-main);
+  border:2px @c-main solid;
+  &:hover,
+  &:focus {
+      color:#fff;
+      background-color: @c-main;
+      border-color: @c-main;
+      text-decoration: none;
+  }
+}
 //
 //.btn-bf {
 //  .button-variant(#000; transparent; #000);

@@ -18,23 +18,33 @@ header {
   padding: 0 0;
   z-index:-2;
   #sub-header {
-//    min-height: 80px;
-//    padding-top:@gap-small;
+    min-height: 160px;
     background-color: @c-main;
+    &.show-header-images{
+      background-position: center;
+      #bg-cover('/assets/img/header/h1.jpg');
+    }
+
     display: block;
     color:#fff;
+
     h1 {
       color: #fff;
       font-family: @font-family-sans-serif;
       font-weight: 200;
+      margin:0;
+      padding:0;
+      padding-left:@gap-base;
     }
+
     @media (min-width: @screen-xs-max) {
     padding-top:@gap-big;
     padding-bottom: @gap-small;
+      h1 {padding-left:0;}
     }
+
   }
   .homepage &{
-//    #sub-header{display:none}
     margin-bottom: 0;
   }
 }
@@ -206,13 +216,35 @@ footer {
 section{
   display: block;
 //  background-color: #f0f0f0;
-  margin-top: @gap-big;
+  margin-top: @gap-big*1.5;
   margin-bottom: @gap-big;
-  padding: @gap-base 0;
-  &#page{
-    @media (max-width: @screen-sm-max) {
-      margin-top:0;
+  &#first{
+    @media (max-width: @screen-sm) {
       padding-top:0;
+      margin-top: @gap-base;
+    }
+  }
+  &#catalog{
+    margin-top: 0;
+    margin-bottom: @gap-base;
+  }
+  &#second{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  &#foto{
+    margin-top: 0;
+  }
+  &#welcome{
+    margin-top:@gap-big;
+    padding-top:0;
+    >.container{
+    //  background-color: @gray-lighter;
+      padding-top:@gap-big;
+  //    background-image: url("/assets/picto/russia_big.svg");
+      background-repeat: no-repeat;
+      background-position: 0 bottom;
+      background-size: 50%;
     }
   }
 }
@@ -226,8 +258,9 @@ section{
 
 .lefted{
   .wrap{
-    margin-bottom: @gap-big;
+//    margin-bottom: @gap-big;
     width:100%;
+    padding:@gap-small 0;
     @media (min-width: @screen-md) {
     text-align: right;
     margin-bottom: 0;
@@ -239,29 +272,24 @@ section{
 
 .section-title{
   font-weight: bold;
-  font-size:24px;
+  font-size:16px;
   font-family: @f-main;
+  text-transform: uppercase;
+//  color:@gray;
+  padding-left: 0;
+  padding-bottom: @gap-small;
   @media (min-width: @screen-md) {
+  text-transform: none;
+  font-family: inherit;
   font-size: 11px;
-  text-transform: lowercase;
   font-weight: normal;
-  color:@gray-light;
+//  color:darken(@gray-lighter,15%);
   text-align: right;
+  padding-left: @gap-big;
   }
 }
 
-#welcome{
-  margin-top:@gap-big;
-  padding-top:0;
-  >.container{
-  //  background-color: @gray-lighter;
-    padding-top:@gap-big;
-//    background-image: url("/assets/picto/russia_big.svg");
-    background-repeat: no-repeat;
-    background-position: 0 bottom;
-    background-size: 50%;
-  }
-}
+
 
 //article
 article{
@@ -314,4 +342,41 @@ article{
   background-color: rgba(255,255,255,0.4);
 }
 #buy{position:absolute; z-index:30; right:00px; bottom:80px; font-family: @f-main; padding:14px 40px;}
+}
+
+
+.wrapper-right{
+  padding-right:@gap-big;
+  @media (max-width:@screen-sm-max){
+//    padding-right:0;
+    padding-bottom: @gap-base;
+  }
+  @media (max-width:@screen-xs-max){
+      padding-right:0;
+  }
+}
+
+
+.wrapper-left{
+  padding-left:@gap-base;
+  padding-right:@gap-base;
+  padding-bottom:@gap-base;
+  @media (min-width:@screen-sm-max)
+  {
+//   border-left:@c-main 1px solid;
+  }
+  @media (max-width:@screen-sm-max){
+//    padding-right:0;
+    padding-bottom: @gap-base;
+  }
+  @media (max-width:@screen-xs-max){
+      padding-left:0;
+      padding-right:0;
+  }
+}
+
+.sales{
+  .row>div{
+    padding-bottom:@gap-small;
+  }
 }

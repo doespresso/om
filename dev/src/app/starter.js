@@ -21,7 +21,7 @@ yepnope([
         load:{
             'pace':'http://omiscranes.ru/assets/js/vendor/pace/pace.min.js',
             'jquery':'http://omiscranes.ru/assets/js/vendor/jquery/jquery.min.js',
-            'underscore':'http://omiscranes.ru/assets/js/vendor/underscore/underscore.min.js',
+//            'underscore':'http://omiscranes.ru/assets/js/vendor/underscore/underscore.min.js',
 //            'backbone':'http://omiscranes.ru/assets/js/vendor/backbone/backbone.min.js',
 //            'marionette':'http://omiscranes.ru/assets/js/vendor/backbone/marionette.min.js',
             'bootstrap':'http://omiscranes.ru/assets/js/vendor/bootstrap/bootstrap.min.js',
@@ -159,7 +159,7 @@ yepnope([
 //            },
             'lightbox':function (url, result, key) {
                 console.log("lightbox");
-                $('.foto-list').magnificPopup({
+                $('#gallery').magnificPopup({
                     delegate:'a',
                     type:'image',
                     gallery:{
@@ -177,26 +177,56 @@ yepnope([
                     mainClass:'mfp-fade',
                     removalDelay:300,
                 });
+                $('.zoom').magnificPopup({
+                    type:'image',
+                    image:{
+                        titleSrc:'title'
+                    },
+                    mainClass:'mfp-fade',
+                    removalDelay:300,
+                });
             },
             'mmenu':function (url, result, key) {
                 console.log("menu");
+
+                $("#feedback").mmenu({
+                   isMenu:false,
+                   position:"right",
+                   zposition:"front"
+                })
+                    .on(
+                    "opened.mm",
+                    function () {
+                        console.log("feedback open");
+                        $( "#feedback-body" ).load( "http://omiscranes.ru/form.html" );
+                    }
+                ).on(
+                    "closed.mm",
+                    function () {
+                        console.log("feedback closed");
+                    }
+                );
+
                 $('#mmenu').mmenu({
 //                    moveBackground:true,
-                    position:"left",
-                    zposition:"front",
-                    isMenu:true,
-                    counters:false,
-                    classes: "mm-firm",
+                        position:"right",
+//                        zposition:"front",
+                        isMenu:true,
+                        counters:false,
+                        classes:"mm-firm",
 //                    slidingSubmenus: false
-                    labels:{
+                        labels:{
 //                        fixed:true,
 //                        collapse:true
+                        },
+                        onClick:{
+                            setSelected:true,
+//                            preventDefault:true
+                        }
                     },
-                    onClick:{setSelected:true,preventDefault:true}
-                },
                     {
-                       listClass: "menu-list",
-                       selectedClass  : "active",
+                        listClass:"menu-list",
+                        selectedClass:"active",
 //                       labelClass     : "Label",
 //                       panelClass     : "Panel",
                     }
@@ -233,6 +263,72 @@ console.log("swiper");
                     pagination:'#scroll-swiper-pagination',
                     autoplay:10000,
                 });
+
+
+
+
+                var F_swiper = new Swiper('#foto-slider', {
+//                    slidesPerView:'auto',
+                    watchActiveIndex:true,
+                    speed:500,
+                    loop:false,
+                    mode:'horizontal',
+//                    calculateHeight:true,
+                    mousewheelControl:true,
+                    keyboardControl:true,
+                    paginationClickable:true,
+//                    pagination:'#foto-swiper-pagination',
+                    autoplay:10000,
+//                    oninit : function(swiper) {
+//                      console.log("init++");
+//                    }
+                    onSlideChangeStart: function(){
+                      console.log(F_swiper.activeIndex);
+                      $("#foto-list a.active").removeClass('active');
+                      $("#foto-list a").eq(F_swiper.activeIndex).addClass('active');
+                    }
+                });
+
+
+                $("#foto-list a").each(function(index) {
+                    console.log(index);
+                    var link = $(this).attr("href");
+                    var caption = $(this).attr("data-attr-desc");
+                    var zo = $(this).attr("data-attr-bigimage");
+                    if (typeof caption !== 'undefined') {
+                        var capt = '<div class="caption">' + caption + '</div>';
+                        var tcapt = caption;
+                    }
+                    else {
+                        var capt = '';
+                        var tcapt = '';
+                    }
+                    if (typeof zo !== 'undefined') {
+                        var zoom = '<a class="zoom" href="'+zo+'" alt="Увеличить" title="'+tcapt+'"></a>';
+                    }
+                    else {
+                        var zoom = '';
+                    }
+                    var newSlide = F_swiper.createSlide('<div class="slide-wrapper" style="background-image: url('+link+');">'+capt+zoom+'</div>', 'swiper-slide', 'div');
+                    newSlide.append();
+
+                });
+                F_swiper.reInit();
+                F_swiper.swipeTo(0);
+                $("#foto-list a").eq(0).addClass('active');
+
+                $("#foto-list a").on('touchstart mousedown',function(e){
+                  e.preventDefault()
+                  $("#foto-list a.active").removeClass('active')
+                  $(this).addClass('active')
+                    F_swiper.swipeTo( $(this).index() )
+                })
+                $("#foto-list a").click(function(e){
+                  e.preventDefault()
+                })
+
+
+
 
 //                var Adv_swiper = new Swiper('#advantages-slider', {
 //                    slidesPerView:'auto',

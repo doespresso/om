@@ -15,7 +15,7 @@
 // Panel contents
 .panel-body {
 //  padding: @panel-body-padding;
-  padding: @gap-big 0;
+  padding: @gap-base 0;
   &:extend(.clearfix all);
 }
 
@@ -43,15 +43,18 @@
     padding: @gap-base @gap-base;
     display: block;
     position:relative;
+    padding-right:@gap-big*2;
   }
- a:before{
-       contant:"+";
-       position:absolute;
-       right:@gap-base;
-       top:0;
-   color:red;
-   font-size: 100px;
-     }
+  a:before {
+    content: "+";
+    position: absolute;
+    right: @gap-base + 2px;
+    top: @gap-small + 2px;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 27px;
+    line-height: 27px;
+//    margin-top: -@gap-small;
+  }
 }
 
 // Optional footer (stays gray in every modifier class)

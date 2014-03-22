@@ -282,7 +282,10 @@ html.mm-blocking #mm-blocker
 	{
 		text-indent: $btnSize - ( $padding * 2 );
 		padding-top: ( $btnSize / 2 ) + $padding;
+		padding-left: $padding * 3;
 		margin-top: -( $btnSize / 2 );
+        font-size:22px;
+        font-weight: bold;
 	}
 
 	// Labels

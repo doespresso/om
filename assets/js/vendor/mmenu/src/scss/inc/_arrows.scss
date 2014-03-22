@@ -11,14 +11,16 @@
 }
 @mixin arrow-prev
 {
+  font-size:16px;
   content:"\e68e";
   left:0px;
   margin-left: -20px;
-  bottom: 50%;
+  bottom: 45%;
 }
 @mixin arrow-next
 {
   content:"\e68d";
   right:0;
   bottom: 50%;
+  margin-right: -5px;
 }

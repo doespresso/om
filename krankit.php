@@ -102,8 +102,6 @@ require_once '/Users/jd/servers/LOCALHOST/omiskrans.ru/public/cms/kernel/prog/de
         fMenu_Elem_Path('-1', '1', 'a:5:{s:3:\"ids\";s:11:\"35^36^37^50\";s:7:\"temp_id\";s:1:\"1\";s:9:\"num_items\";s:1:\"5\";s:11:\"show_hidden\";s:1:\"1\";s:11:\"show_closed\";s:1:\"0\";}', '17');
 
         ?></div>
-<!--<div class="col-sm-3 col-xs-12 hidden-xs"><a href="#feedback" class="btn btn-block btn-primary btn-lg">прямые продажи</a></div>-->
-
 </div>
 </div>
 </div>
@@ -137,7 +135,7 @@ require_once '/Users/jd/servers/LOCALHOST/omiskrans.ru/public/cms/kernel/prog/de
 <div class="panel-group" id="accordion">
 <div class="panel panel-default">
 <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseSale">информация и прямые продажи</a></h4></div>
-<div id="collapseSale" class="panel-collapse collapse"><div class="panel-body">
+<div id="collapseSale" class="panel-collapse collapse in"><div class="panel-body">
 <div class="sales wrapper-left">
 <div class="row">
 <div class="col-sm-12 col-xs-6"><tel class="h4">(495) 778-32-36</tel></div>
@@ -243,7 +241,7 @@ require_once '/Users/jd/servers/LOCALHOST/omiskrans.ru/public/cms/kernel/prog/de
 
         ?></nav>
 
-<div id="feedback" class="mmenu"><div id="feedback-body">загрузка формы обратной связи ...</div></div>
+<div id="feedback" class="mmenu"><div id="feedback-body"></div></div>
 
 </body>
 </html><?php if (!isset($sb_no_footer) || !$sb_no_footer) require_once SB_PROG_KERNEL_PATH.'/footer.inc.php'; ?>

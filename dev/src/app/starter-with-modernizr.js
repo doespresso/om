@@ -857,15 +857,15 @@ console.log("init");
 paceOptions = {
     ajax:true,
     restartOnRequestAfter:true,
-    restartOnPushState: true
+    restartOnPushState:true
 };
 odometerOptions = {
-  auto: true, // Don't automatically initialize everything with class 'odometer'
-  selector: '.odometer', // Change the selector used to automatically find things to be animated
-  duration: 5000, // Change how long the javascript expects the CSS animation to take
-  theme: 'minimal', // Specify the theme (if you have more than one theme css file on the page)
+    auto:true, // Don't automatically initialize everything with class 'odometer'
+    selector:'.odometer', // Change the selector used to automatically find things to be animated
+    duration:5000, // Change how long the javascript expects the CSS animation to take
+    theme:'minimal', // Specify the theme (if you have more than one theme css file on the page)
 //  animation: 'count' // Count is a simpler animation method which just increments the value,
-                     // use it when you're looking for something more subtle.
+    // use it when you're looking for something more subtle.
 };
 //yepnope.injectCss(['http://omiscranes.ru/dev/component/switchery/switchery.css']);
 yepnope.injectCss(['http://omiscranes.ru/assets/js/vendor/mmenu/src/css/jquery.mmenu.all.css']);
@@ -883,7 +883,7 @@ yepnope([
             'swiper':'http://omiscranes.ru/assets/js/vendor/swiper/swiper.min.js',
             'swiper_progress':'http://omiscranes.ru/assets/js/vendor/swiper/idangerous.swiper.progress.min.js',
             'odometer':'http://omiscranes.ru/dev/component/odometer/odometer.min.js',
-            'espy':'http://omiscranes.ru/dev/component/espy/dist/jquery.espy.min.js',
+//            'espy':'http://omiscranes.ru/dev/component/espy/dist/jquery.espy.min.js',
 //            'social_snap':'http://omiscranes.ru/assets/js/app/social-snap.js',
 //            'switchery':'http://omiscranes.ru/assets/js/vendor/switchery/switchery.min.js',
             'mmenu':'http://omiscranes.ru/assets/js/vendor/mmenu/src/js/jquery.mmenu.min.all.js',
@@ -895,88 +895,45 @@ yepnope([
                 console.log("pace");
             },
             'jquery':function (url, result, key) {
-                console.log("jquery loaded");
-                $(document).ready(function(){
 
-//social
 
-//social
+                $(document).ready(function () {
 
-                    console.log("ready");
-                    $(".show-callback").on("click",function(e){
-                        e.preventDefault();
-                        $("#callback-panel").fadeToggle(300);
-                    });
-                    $("#callback-form #my_tel").on("focus",function(){
-                        console.log("focus");
-                        $(this).removeClass("animated bounce");
-                    });
-                    $("#callback-form").on("submit",function(e){
-                        e.preventDefault();
-                        var form = $(this);
-                        var ftel = form.find("#my_tel");
-                        var tel = ftel.val();
-                        if (tel.length<9) {
-                            console.log(tel,"wrong");
-                            ftel.addClass("animated bounce");
-                        } else {
-                        $.ajax({
-                          type: "POST",
-                          data: form.serialize(),
-//                          dataType: "html",
-                          url: form.attr("action"),
-                          beforeSend: function() {
-                              $("#callback-panel .overlay").fadeIn();
-                          },
-                          success: function(response) {
-                              $("#callback-panel .overlay").fadeOut();
-                              console.log("sent");
-                              console.log(response);
-                              if (response==''){
-                                  $("#callback-panel #result").html("Спасибо!<br/>Мы перезвоним Вам на номер <b>"+tel+"</b>.");
-                                  $("#callback-panel").addClass("done").delay(3000).fadeOut(2000,function(){
-                                      $(this).removeClass("done");
-                                      $("#callback-form #my_tel").val("");
-                                  });
-                              }
-                          },
-                        });
-                    }
-                    });
+
                 });
             },
-            'social_snap':function (url, result, key){
+            'social_snap':function (url, result, key) {
                 $("footer").socialsnap();
             },
             'bootstrap':function (url, result, key) {
-                console.log("bootstrap");
+
             },
-            'espy':function (url, result, key) {
-                console.log("elspy");
-                $("section").espy(function(entered, state){
-                    if (entered){
-//                        setTimeout(function(){
-                                $(this).find(".show-me").addClass("show-on bounce");
-//                                $(this).css("background-color","red");
-//                            },1000);
-                        console.log("section----enter",$(this).attr("id"));
-                    }
-                },{
-                    offset:-200
-                });
-//                $("#top-wrapper").espy(function(entered, state){
+//            'espy':function (url, result, key) {
+//                console.log("elspy");
+//                $("section").espy(function(entered, state){
 //                    if (entered){
-                        setTimeout(function () {
-                            $("#cranes-count").fadeIn();
-                            $("#top-wrapper .rus").fadeIn();
-                            $('#cranes-count').html('745');
-//                            od.update(752);
-                        }, 2000);
+////                        setTimeout(function(){
+//                                $(this).find(".show-me").addClass("show-on bounce");
+////                                $(this).css("background-color","red");
+////                            },1000);
+//                        console.log("section----enter",$(this).attr("id"));
 //                    }
 //                },{
-//                    offset:-100
+//                    offset:-200
 //                });
-            },
+////                $("#top-wrapper").espy(function(entered, state){
+////                    if (entered){
+//                        setTimeout(function () {
+//                            $("#cranes-count").fadeIn();
+//                            $("#top-wrapper .rus").fadeIn();
+//                            $('#cranes-count').html('745');
+////                            od.update(752);
+//                        }, 2000);
+////                    }
+////                },{
+////                    offset:-100
+////                });
+//            },
 
             'odometer':function (url, result, key) {
 //                od = new Odometer({
@@ -1013,7 +970,6 @@ yepnope([
 //                var switcher = new Switchery(swelem);
 //            },
             'lightbox':function (url, result, key) {
-                console.log("lightbox");
                 $('#gallery').magnificPopup({
                     delegate:'a',
                     type:'image',
@@ -1042,19 +998,78 @@ yepnope([
                 });
             },
             'mmenu':function (url, result, key) {
-                console.log("menu");
 
                 $("#feedback").mmenu({
-                   isMenu:false,
-                   position:"left",
-                   zposition:"back",
-                   classes:"mm-light",
+                    isMenu:false,
+                    position:"left",
+                    zposition:"back",
+                    classes:"mm-light",
                 })
                     .on(
                     "opened.mm",
                     function () {
                         console.log("feedback open");
-                        $( "#feedback-body" ).load( "http://omiscranes.ru/form.html" );
+                        if ($("#feedback").hasClass("hasloaded")) {
+                            console.log("hasclass");
+                        }
+                        else {
+                            console.log("NOhasclass");
+                            $("#feedback-body").load("http://omiscranes.ru/ajax/feedback_form.php", function (response, status, xhr) {
+                                $("#feedback").addClass("hasloaded");
+                                $("#feedback-form").addClass("animated fadeInDownBig");
+                                setTimeout(function () {
+                                    $("#feedback-form").removeClass("animated fadeInDownBig");
+                                }, 5000);
+                                $("#feedback-form").on("submit", function (event) {
+                                    console.log("submit");
+                                    event.preventDefault();
+                                    var form = $(this);
+                                    var form_errors = 0;
+                                    $("#feedback-form .required>input").each(function (index) {
+                                        if ($(this).val().length < 5) {
+                                            $(this).addClass("animated shake");
+                                            form_errors++;
+                                            console.log(form_errors, " errors ", index);
+                                        }
+                                    });
+                                    if (form_errors > 0) {
+                                        console.log(form_errors);
+                                    } else {
+                                        $.ajax({
+                                            type:"POST",
+                                            data:form.serialize(),
+                                            //                          dataType: "html",
+                                            url:form.attr("action"),
+                                            beforeSend:function () {
+                                                console.log(form.attr("action"));
+                                            },
+                                            success:function (response) {
+                                                console.log("sent");
+                                                console.log(response);
+                                                if (response == '') {
+                                                    console.log("OK");
+                                                    form.addClass("animated fadeOutDown");
+                                                    $("#feedback-body #form-result").html("<p>Благодарим Вас за проявленный интерес!</p><p>В ближайшее время с Вами свяжется руководитель соответствующего запросу направления.</p>");
+                                                    $("#feedback-body #form-result").fadeIn();
+                                                    setTimeout(function () {
+                                                        $("#feedback").trigger("close.mm");
+                                                        $("#feedback").removeClass("hasloaded");
+                                                        form.removeClass("animated fadeOutDown");
+                                                    }, 6000);
+                                                }
+                                            }
+                                        });
+                                    }
+                                    setTimeout(function () {
+                                        $("#feedback-form input").removeClass("animated shake");
+                                        form_errors = 0;
+                                    }, 3000);
+                                });
+
+
+                            });
+
+                        }
                     }
                 ).on(
                     "closed.mm",
@@ -1062,48 +1077,35 @@ yepnope([
                         console.log("feedback closed");
                     }
                 );
+                //////
+
+
+                //////
+
 
                 $('#mmenu').mmenu({
-//                    moveBackground:true,
                         position:"right",
                         zposition:"front",
                         isMenu:true,
                         counters:false,
                         classes:"mm-blue",
-//                    slidingSubmenus: false
                         labels:{
 //                        fixed:true,
 //                        collapse:true
                         },
                         onClick:{
                             setSelected:true,
-//                            preventDefault:true
                         }
                     },
                     {
                         listClass:"menu-list",
                         selectedClass:"active",
-//                       labelClass     : "Label",
-//                       panelClass     : "Panel",
                     }
                 );
-//                    .on(
-//                      "opened.mm",
-//                      function()
-//                      {
-//                         $("#show-mmenu").addClass("opened");
-//                      })
-//                    .on(
-//                                          "closed.mm",
-//                                          function()
-//                                          {
-//                                             $("#show-mmenu").removeClass("opened");
-//                                          });
+
             },
             'swiper':function () {
                 "use strict";
-
-console.log("swiper");
 
 
                 var Hd_swiper = new Swiper('#scroll-slider', {
@@ -1121,8 +1123,6 @@ console.log("swiper");
                 });
 
 
-
-
                 var F_swiper = new Swiper('#foto-slider', {
 //                    slidesPerView:'auto',
                     watchActiveIndex:true,
@@ -1138,16 +1138,14 @@ console.log("swiper");
 //                    oninit : function(swiper) {
 //                      console.log("init++");
 //                    }
-                    onSlideChangeStart: function(){
-                      console.log(F_swiper.activeIndex);
-                      $("#foto-list a.active").removeClass('active');
-                      $("#foto-list a").eq(F_swiper.activeIndex).addClass('active');
+                    onSlideChangeStart:function () {
+                        $("#foto-list a.active").removeClass('active');
+                        $("#foto-list a").eq(F_swiper.activeIndex).addClass('active');
                     }
                 });
 
 
-                $("#foto-list a").each(function(index) {
-                    console.log(index);
+                $("#foto-list a").each(function (index) {
                     var link = $(this).attr("href");
                     var caption = $(this).attr("data-attr-desc");
                     var zo = $(this).attr("data-attr-bigimage");
@@ -1160,55 +1158,28 @@ console.log("swiper");
                         var tcapt = '';
                     }
                     if (typeof zo !== 'undefined') {
-                        var zoom = '<a class="zoom" href="'+zo+'" alt="Увеличить" title="'+tcapt+'"></a>';
+                        var zoom = '<a class="zoom" href="' + zo + '" alt="Увеличить" title="' + tcapt + '"></a>';
                     }
                     else {
                         var zoom = '';
                     }
-                    var newSlide = F_swiper.createSlide('<div class="slide-wrapper" style="background-image: url('+link+');">'+capt+zoom+'</div>', 'swiper-slide', 'div');
+                    var newSlide = F_swiper.createSlide('<div class="slide-wrapper" style="background-image: url(' + link + ');">' + capt + zoom + '</div>', 'swiper-slide', 'div');
                     newSlide.append();
-
+                    F_swiper.reInit();
+                    F_swiper.swipeTo(0);
                 });
-                F_swiper.reInit();
-                F_swiper.swipeTo(0);
+
                 $("#foto-list a").eq(0).addClass('active');
 
-                $("#foto-list a").on('touchstart mousedown',function(e){
-                  e.preventDefault()
-                  $("#foto-list a.active").removeClass('active')
-                  $(this).addClass('active')
-                    F_swiper.swipeTo( $(this).index() )
-                })
-                $("#foto-list a").click(function(e){
-                  e.preventDefault()
-                })
-
-
-
-
-//                var Adv_swiper = new Swiper('#advantages-slider', {
-//                    slidesPerView:'auto',
-//                    watchActiveIndex:true,
-//                    speed:2000,
-//                    loop:true,
-//                    mode:'horizontal',
-//                    calculateHeight:true,
-//                    mousewheelControl:false,
-//                    keyboardControl:true,
-//                    paginationClickable:true,
-//                    pagination:'#advantages-swiper-pagination',
-//                    autoplay:7000,
-//                });
-
-
-//                    $(s_next).on('click', function (e) {
-//                        e.preventDefault()
-//                        swipers[index].swipePrev()
-//                    });
-//                    $(s_prev).on('click', function (e) {
-//                        e.preventDefault()
-//                        swipers[index].swipeNext()
-//                    });
+                $("#foto-list a").on('touchstart mousedown', function (e) {
+                    e.preventDefault();
+                    $("#foto-list a.active").removeClass('active');
+                    $(this).addClass('active');
+                    F_swiper.swipeTo($(this).index());
+                });
+                $("#foto-list a").click(function (e) {
+                    e.preventDefault();
+                });
 
 
             },

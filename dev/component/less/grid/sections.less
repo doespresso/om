@@ -53,7 +53,7 @@ header {
   @slogans-height: 108px;
   @slogans-height-xs: 100px;
   @nav-height: 50px;
-  @bg-grey-light: #eee;
+  @bg-grey-light:@gray-lighter;
   .user-select(none);
 //  @media (max-width: @screen-sm-max) {
 //    position:fixed;
@@ -373,6 +373,10 @@ article{
       padding-left:0;
       padding-right:0;
   }
+}
+
+.wrapper-top{
+  margin-top:@gap-big;
 }
 
 .sales{

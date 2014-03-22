@@ -9,7 +9,7 @@
 //	Light
 $cls			: ".mm-light";
 $baseBg			: #f3f3f3;
-$pageShadow		: 0 0 10px rgba( 0, 0, 0, 0.3 );
+$pageShadow		: -1px 0 2px rgba( 0, 0, 0, 0.1 );
 $text			: rgba( 0, 0, 0, 0.6 );
 $dimmedText		: rgba( 0, 0, 0, 0.3 );
 $emphasizedBg	: rgba( 255, 255, 255, 0.6 );
@@ -107,7 +107,7 @@ $cls			: ".mm-blue";
 $baseBg			: #2aabe3;
 $pageShadow		: none;
 $text			: rgba( 255, 255, 255, 1 );
-$dimmedText		: rgba( 255, 255, 255, 0.3 );
+$dimmedText		: rgba( 255, 255, 255, 1 );
 $emphasizedBg	: rgba( 255, 255, 255, 0.25 );
 $highlightedBg	: rgba( 255, 255, 255, 0.15 );
 $border			: rgba( 255, 255, 255, 0.1 );

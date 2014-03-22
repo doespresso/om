@@ -196,7 +196,10 @@ html.mm-blocking #mm-blocker {
   .mm-list a.mm-subclose {
     text-indent: 20px;
     padding-top: 30px;
-    margin-top: -20px; }
+    padding-left: 30px;
+    margin-top: -20px;
+    font-size: 22px;
+    font-weight: bold; }
   .mm-list > li.mm-label {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -223,12 +226,14 @@ html.mm-blocking #mm-blocker {
     content: "\e68d";
     right: 0;
     bottom: 50%;
+    margin-right: -5px;
     right: 18px; }
   .mm-list a.mm-subclose:before {
+    font-size: 16px;
     content: "\e68e";
     left: 0px;
     margin-left: -20px;
-    bottom: 50%;
+    bottom: 45%;
     margin-bottom: -15px;
     left: 22px; }
 
@@ -428,10 +433,11 @@ html.mm-opened.mm-dragging #mm-blocker {
   .mm-header .mm-prev {
     left: 0; }
     .mm-header .mm-prev:before {
+      font-size: 16px;
       content: "\e68e";
       left: 0px;
       margin-left: -20px;
-      bottom: 50%;
+      bottom: 45%;
       left: 22px; }
   .mm-header .mm-next {
     right: 0; }
@@ -439,6 +445,7 @@ html.mm-opened.mm-dragging #mm-blocker {
       content: "\e68d";
       right: 0;
       bottom: 50%;
+      margin-right: -5px;
       right: 18px; }
 
 .mm-menu.mm-hassearch .mm-header {
@@ -1169,7 +1176,7 @@ html.mm-opened.mm-opening.mm-front .mm-fixed-bottom {
 	jQuery.mmenu themes extension CSS
 */
 html.mm-opened.mm-light .mm-page {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+  box-shadow: -1px 0 2px rgba(0, 0, 0, 0.1); }
 
 .mm-menu.mm-light {
   background: #f3f3f3;
@@ -1308,9 +1315,9 @@ html.mm-opened.mm-blue .mm-page {
   border-color: rgba(255, 255, 255, 0.1); }
 .mm-menu.mm-blue .mm-list > li > a.mm-subclose {
   background: rgba(255, 255, 255, 0.25);
-  color: rgba(255, 255, 255, 0.3); }
+  color: white; }
 .mm-menu.mm-blue .mm-list > li > a.mm-subopen:after, .mm-menu.mm-blue .mm-list > li > a.mm-subclose:before {
-  border-color: rgba(255, 255, 255, 0.3); }
+  border-color: white; }
 .mm-menu.mm-blue .mm-list > li > a.mm-subopen:before {
   border-color: rgba(255, 255, 255, 0.1); }
 .mm-menu.mm-blue .mm-list > li.mm-selected > a:not(.mm-subopen),
@@ -1326,16 +1333,16 @@ html.mm-opened.mm-blue .mm-page {
   background: rgba(255, 255, 255, 0.3);
   color: white; }
 .mm-menu.mm-blue li.mm-noresults {
-  color: rgba(255, 255, 255, 0.3); }
+  color: white; }
 
 .mm-menu.mm-blue em.mm-counter {
-  color: rgba(255, 255, 255, 0.3); }
+  color: white; }
 
 .mm-menu.mm-blue .mm-list li.mm-label > div > div {
   background: rgba(255, 255, 255, 0.15); }
 
 .mm-menu.mm-blue .mm-header {
   border-color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.3); }
+  color: white; }
   .mm-menu.mm-blue .mm-header a:before {
-    border-color: rgba(255, 255, 255, 0.3); }
+    border-color: white; }

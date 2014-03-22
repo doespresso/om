@@ -232,7 +232,7 @@ require_once '/Users/jd/servers/LOCALHOST/omiskrans.ru/public/cms/kernel/prog/de
 
 <nav id="mmenu" class="mmenu"><?php include_once SB_CMS_PL_PATH.'/pl_menu/prog/pl_menu.php';
 
-        fMenu_Elem_Tree('-1', '4', 'a:11:{s:3:\"ids\";s:8:\"35^36^37\";s:7:\"temp_id\";s:1:\"4\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '7');
+        fMenu_Elem_Tree('-1', '4', 'a:11:{s:3:\"ids\";s:11:\"35^36^37^50\";s:7:\"temp_id\";s:1:\"4\";s:4:\"from\";s:1:\"1\";s:2:\"to\";s:0:\"\";s:5:\"count\";s:1:\"0\";s:16:\"parent_selection\";s:1:\"1\";s:11:\"parent_link\";s:1:\"0\";s:11:\"show_closed\";s:1:\"0\";s:11:\"show_hidden\";s:1:\"0\";s:11:\"menu_design\";s:1:\"0\";s:12:\"query_string\";s:1:\"1\";}', '7');
 
         ?></nav>
 

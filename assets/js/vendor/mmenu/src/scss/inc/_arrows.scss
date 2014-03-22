@@ -1,24 +1,24 @@
 //	Arrows
 @mixin arrow
 {
-	content: '';
-	border: 2px solid transparent;
-	display: block;
-	width: 7px;
-	height: 7px;
-	margin-bottom: -5px;
-	position: absolute;
-	bottom: 50%;
-	
-	@include vendor-prefix( "transform", rotate( -45deg ) );
+  font-family: 'icomoon';
+  position:absolute;
+  right:0;
+  bottom: 50%;
+  margin-bottom: -10px;
+  font-size: 20px;
+  color:#fff;
 }
 @mixin arrow-prev
 {
-	border-right: none;
-	border-bottom: none;
+  content:"\e68e";
+  left:0px;
+  margin-left: -20px;
+  bottom: 50%;
 }
 @mixin arrow-next
 {
-	border-top: none;
-	border-left: none;
+  content:"\e68d";
+  right:0;
+  bottom: 50%;
 }

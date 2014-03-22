@@ -132,7 +132,8 @@ html.mm-blocking #mm-blocker {
 
 .mm-list {
   font: inherit;
-  font-size: 14px; }
+  font-size: 14px;
+  font-family: ProximaNova, Arial, Tahoma; }
   .mm-list a,
   .mm-list a:hover {
     text-decoration: none; }
@@ -211,26 +212,23 @@ html.mm-blocking #mm-blocker {
       padding-top: 25px; }
   .mm-list a.mm-subopen:after,
   .mm-list a.mm-subclose:before {
-    content: '';
-    border: 2px solid transparent;
-    display: block;
-    width: 7px;
-    height: 7px;
-    margin-bottom: -5px;
+    font-family: 'icomoon';
     position: absolute;
+    right: 0;
     bottom: 50%;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg); }
+    margin-bottom: -10px;
+    font-size: 20px;
+    color: #fff; }
   .mm-list a.mm-subopen:after {
-    border-top: none;
-    border-left: none;
+    content: "\e68d";
+    right: 0;
+    bottom: 50%;
     right: 18px; }
   .mm-list a.mm-subclose:before {
-    border-right: none;
-    border-bottom: none;
+    content: "\e68e";
+    left: 0px;
+    margin-left: -20px;
+    bottom: 50%;
     margin-bottom: -15px;
     left: 22px; }
 
@@ -419,31 +417,28 @@ html.mm-opened.mm-dragging #mm-blocker {
     bottom: 0; }
     .mm-header .mm-prev:before,
     .mm-header .mm-next:before {
-      content: '';
-      border: 2px solid transparent;
-      display: block;
-      width: 7px;
-      height: 7px;
-      margin-bottom: -5px;
+      font-family: 'icomoon';
       position: absolute;
+      right: 0;
       bottom: 50%;
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg);
+      margin-bottom: -10px;
+      font-size: 20px;
+      color: #fff;
       margin-bottom: -15px; }
   .mm-header .mm-prev {
     left: 0; }
     .mm-header .mm-prev:before {
-      border-right: none;
-      border-bottom: none;
+      content: "\e68e";
+      left: 0px;
+      margin-left: -20px;
+      bottom: 50%;
       left: 22px; }
   .mm-header .mm-next {
     right: 0; }
     .mm-header .mm-next:before {
-      border-top: none;
-      border-left: none;
+      content: "\e68d";
+      right: 0;
+      bottom: 50%;
       right: 18px; }
 
 .mm-menu.mm-hassearch .mm-header {
@@ -1091,8 +1086,7 @@ html.mm-front #mm-blocker {
   z-index: 0; }
 
 .mm-menu.mm-front {
-  z-index: 1;
-  box-shadow: 5px 0 0px rgba(0, 0, 0, 0.1); }
+  z-index: 1; }
 
 html.mm-opened.mm-next .mm-page {
   box-shadow: none; }
@@ -1271,9 +1265,9 @@ html.mm-opened.mm-black .mm-page {
   border-color: rgba(255, 255, 255, 0.2); }
 .mm-menu.mm-black .mm-list > li > a.mm-subclose {
   background: rgba(255, 255, 255, 0.25);
-  color: white; }
+  color: rgba(255, 255, 255, 0.3); }
 .mm-menu.mm-black .mm-list > li > a.mm-subopen:after, .mm-menu.mm-black .mm-list > li > a.mm-subclose:before {
-  border-color: white; }
+  border-color: rgba(255, 255, 255, 0.3); }
 .mm-menu.mm-black .mm-list > li > a.mm-subopen:before {
   border-color: rgba(255, 255, 255, 0.2); }
 .mm-menu.mm-black .mm-list > li.mm-selected > a:not(.mm-subopen),
@@ -1289,59 +1283,59 @@ html.mm-opened.mm-black .mm-page {
   background: rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.6); }
 .mm-menu.mm-black li.mm-noresults {
-  color: white; }
+  color: rgba(255, 255, 255, 0.3); }
 
 .mm-menu.mm-black em.mm-counter {
-  color: white; }
+  color: rgba(255, 255, 255, 0.3); }
 
 .mm-menu.mm-black .mm-list li.mm-label > div > div {
   background: rgba(255, 255, 255, 0.15); }
 
 .mm-menu.mm-black .mm-header {
   border-color: rgba(255, 255, 255, 0.2);
-  color: white; }
+  color: rgba(255, 255, 255, 0.3); }
   .mm-menu.mm-black .mm-header a:before {
-    border-color: white; }
+    border-color: rgba(255, 255, 255, 0.3); }
 
-html.mm-opened.mm-firm .mm-page {
+html.mm-opened.mm-blue .mm-page {
   box-shadow: none; }
 
-.mm-menu.mm-firm {
-  background: #999999;
+.mm-menu.mm-blue {
+  background: #2aabe3;
   color: white; }
 
-.mm-menu.mm-firm .mm-list > li:after {
-  border-color: rgba(255, 255, 255, 0.2); }
-.mm-menu.mm-firm .mm-list > li > a.mm-subclose {
-  background: rgba(0, 0, 0, 0.05);
-  color: rgba(255, 255, 255, 0.7); }
-.mm-menu.mm-firm .mm-list > li > a.mm-subopen:after, .mm-menu.mm-firm .mm-list > li > a.mm-subclose:before {
-  border-color: rgba(255, 255, 255, 0.7); }
-.mm-menu.mm-firm .mm-list > li > a.mm-subopen:before {
-  border-color: rgba(255, 255, 255, 0.2); }
-.mm-menu.mm-firm .mm-list > li.mm-selected > a:not(.mm-subopen),
-.mm-menu.mm-firm .mm-list > li.mm-selected > span {
-  background: rgba(0, 0, 0, 0.05); }
-.mm-menu.mm-firm .mm-list > li.mm-label {
+.mm-menu.mm-blue .mm-list > li:after {
+  border-color: rgba(255, 255, 255, 0.1); }
+.mm-menu.mm-blue .mm-list > li > a.mm-subclose {
+  background: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.3); }
+.mm-menu.mm-blue .mm-list > li > a.mm-subopen:after, .mm-menu.mm-blue .mm-list > li > a.mm-subclose:before {
+  border-color: rgba(255, 255, 255, 0.3); }
+.mm-menu.mm-blue .mm-list > li > a.mm-subopen:before {
+  border-color: rgba(255, 255, 255, 0.1); }
+.mm-menu.mm-blue .mm-list > li.mm-selected > a:not(.mm-subopen),
+.mm-menu.mm-blue .mm-list > li.mm-selected > span {
+  background: rgba(255, 255, 255, 0.25); }
+.mm-menu.mm-blue .mm-list > li.mm-label {
   background: rgba(255, 255, 255, 0.15); }
-.mm-menu.mm-firm.mm-vertical .mm-list li.mm-opened > a.mm-subopen,
-.mm-menu.mm-firm.mm-vertical .mm-list li.mm-opened > ul {
+.mm-menu.mm-blue.mm-vertical .mm-list li.mm-opened > a.mm-subopen,
+.mm-menu.mm-blue.mm-vertical .mm-list li.mm-opened > ul {
   background: rgba(255, 255, 255, 0.15); }
 
-.mm-menu.mm-firm .mm-search input {
-  background: rgba(255, 255, 255, 0.9);
+.mm-menu.mm-blue .mm-search input {
+  background: rgba(255, 255, 255, 0.3);
   color: white; }
-.mm-menu.mm-firm li.mm-noresults {
-  color: rgba(255, 255, 255, 0.7); }
+.mm-menu.mm-blue li.mm-noresults {
+  color: rgba(255, 255, 255, 0.3); }
 
-.mm-menu.mm-firm em.mm-counter {
-  color: rgba(255, 255, 255, 0.7); }
+.mm-menu.mm-blue em.mm-counter {
+  color: rgba(255, 255, 255, 0.3); }
 
-.mm-menu.mm-firm .mm-list li.mm-label > div > div {
+.mm-menu.mm-blue .mm-list li.mm-label > div > div {
   background: rgba(255, 255, 255, 0.15); }
 
-.mm-menu.mm-firm .mm-header {
-  border-color: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.7); }
-  .mm-menu.mm-firm .mm-header a:before {
-    border-color: rgba(255, 255, 255, 0.7); }
+.mm-menu.mm-blue .mm-header {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3); }
+  .mm-menu.mm-blue .mm-header a:before {
+    border-color: rgba(255, 255, 255, 0.3); }

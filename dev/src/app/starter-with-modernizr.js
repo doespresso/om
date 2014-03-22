@@ -1046,8 +1046,9 @@ yepnope([
 
                 $("#feedback").mmenu({
                    isMenu:false,
-                   position:"right",
-                   zposition:"front"
+                   position:"left",
+                   zposition:"back",
+                   classes:"mm-light",
                 })
                     .on(
                     "opened.mm",
@@ -1065,10 +1066,10 @@ yepnope([
                 $('#mmenu').mmenu({
 //                    moveBackground:true,
                         position:"right",
-//                        zposition:"front",
+                        zposition:"front",
                         isMenu:true,
                         counters:false,
-                        classes:"mm-firm",
+                        classes:"mm-blue",
 //                    slidingSubmenus: false
                         labels:{
 //                        fixed:true,

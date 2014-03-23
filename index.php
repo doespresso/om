@@ -60,14 +60,14 @@ require_once '/Users/jd/servers/LOCALHOST/omiskrans.ru/public/cms/kernel/prog/de
 
 <body class="homepage">
 <div class="page-wrapper">
-<section>
+<section class="animated fadeInDownBig">
 <div class="container mobile-fit">
 <div class="row">
 <div class="col-md-2">
 <div class="logo-big"></div>
 </div>
 <div class="col-md-3">
-<p class="lead top-slogan">Мы производим краны и подъемно-транспортные системы с 1962 года</p>
+<p class="top-slogan">Мы производим краны и подъемно-транспортные системы с 1962 года</p>
 </div>
 </div>
 <div class="row">
@@ -76,7 +76,7 @@ require_once '/Users/jd/servers/LOCALHOST/omiskrans.ru/public/cms/kernel/prog/de
 </div>
 </div>
 </div>
-<div class="container mobile-fit">
+<div class="container mobile-fit animated fadeInDownBig">
 <div class="row">
 <div class="col-md-10 col-md-offset-2">
 <h1><?php include_once SB_CMS_PL_PATH.'/pl_pages/prog/pl_pages.php';
@@ -85,7 +85,6 @@ require_once '/Users/jd/servers/LOCALHOST/omiskrans.ru/public/cms/kernel/prog/de
 
         ?></h1>
 <p>Компания OMIS была основана в 1967 году. За более чем 40-летний опыт работы компания надежно укрепилась как на локальном, так и внешнем рынках. На сегодняшний день Группа состоит из 7 компаний, которые включают 180 сотрудников, 50.000 кв. метров производственных площадей и 4 современные производственные линии – все это гарантирует компании OMIS неоспоримое лидерство на Итальянском рынке, и, помимо этого, вхождение в перечень крупнейших крановых производителей Европы. Качество продукции OMIS гарантировано точным контролем на каждой фазе производства, а также постоянным совершенствованием и модернизацией производственных линий. Система качества OMIS подтверждена сертификатом ISO 9000 в 1994 году.</p>
-<h4 class="wrapper-top">Внимание: сайт находится в стадии информационного наполнения.</h4>
 <div class="row wrapper-top"><?php include_once SB_CMS_PL_PATH.'/pl_plugin_maker/prog/pl_plugin_maker.php';
 
         fPlugin_Maker_Elem_List('-1', '1', 'a:37:{s:3:\"ids\";s:5:\"24^25\";s:7:\"temp_id\";s:1:\"1\";s:6:\"filter\";s:3:\"all\";s:5:\"sort1\";s:9:\"p.p_title\";s:5:\"sort2\";s:0:\"\";s:5:\"sort3\";s:0:\"\";s:6:\"order1\";s:3:\"ASC\";s:6:\"order2\";s:4:\"DESC\";s:6:\"order3\";s:4:\"DESC\";s:4:\"page\";s:0:\"\";s:9:\"auth_page\";s:0:\"\";s:9:\"edit_page\";s:0:\"\";s:9:\"subcategs\";s:1:\"1\";s:11:\"show_hidden\";s:1:\"0\";s:13:\"show_selected\";s:1:\"0\";s:10:\"rubrikator\";s:1:\"0\";s:5:\"pm_id\";s:1:\"1\";s:5:\"cloud\";s:1:\"0\";s:10:\"cloud_comp\";s:1:\"0\";s:8:\"calendar\";s:1:\"0\";s:14:\"calendar_field\";s:0:\"\";s:15:\"registred_users\";s:1:\"0\";s:25:\"registred_users_edit_link\";s:1:\"0\";s:16:\"use_id_el_filter\";s:1:\"0\";s:10:\"use_filter\";s:1:\"0\";s:12:\"filter_logic\";s:3:\"AND\";s:17:\"filter_text_logic\";s:3:\"AND\";s:14:\"filter_compare\";s:2:\"IN\";s:12:\"filter_morph\";s:1:\"0\";s:12:\"allow_bbcode\";s:1:\"0\";s:8:\"use_sort\";s:1:\"1\";s:8:\"moderate\";s:1:\"0\";s:14:\"moderate_email\";s:0:\"\";s:19:\"use_component_cache\";s:1:\"0\";s:13:\"cache_not_url\";s:1:\"0\";s:13:\"cache_not_get\";s:1:\"0\";s:18:\"cache_not_get_list\";s:0:\"\";}', '0');
